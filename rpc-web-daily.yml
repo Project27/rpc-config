@@ -19,7 +19,7 @@ dubbo:
     protocol: zookeeper
     address: ${ZOOKEEPER_SERVER:127.0.0.1:2181}
   consumer:
-    group: daily
+    group: ${SPRING_SERVICE:daily}
 
 management:
   server:
