@@ -1,0 +1,63 @@
+server:
+  port: 8084
+
+spring:
+  datasource:
+    druid:
+      driverClassName: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://ip:port/payCenter?useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false&serverTimezone=UTC&useSSL=false&serverTimezone=Asia/Shanghai&allowMultiQueries=true
+      username: nnuo
+      password: nnuo
+      initial-size: 10
+      max-active: 100
+      min-idle: 10
+      max-wait: 60000
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      connection-properties: password=${spring.datasource.druid.password};aesKey=${aes.key}
+      password-callback-class-name: com.XXX.XXX.XXX.config.DruidConfig
+      validation-query: SELECT 1 FROM DUAL
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /admin/druid/*
+      filter:
+        stat:
+          log-slow-sql: true
+          slow-sql-millis: 1000
+          merge-sql: true
+        wall:
+          config:
+            multi-statement-allow: true
+  redis:
+    cluster:
+      nodes: ip:port,ip:port,ip:port
+    lettuce:
+      pool:
+        max-active: 250
+        max-wait: 500ms
+        max-idle: 50
+        min-idle: 10
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+
+dubbo:
+  port: 7889
+  application:
+    name: rpc-account
+  registry:
+    protocol: zookeeper
+    address: ${ZOOKEEPER_SERVER:ip:port,ip:port,ip:port}
+  provider:
+    group: daily
+
+aes:
+  key: 1234567887654321
+
+management:
+  server:
+    port: 10014

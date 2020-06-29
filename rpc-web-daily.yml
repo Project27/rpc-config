@@ -1,0 +1,26 @@
+server:
+  port: 8083
+
+spring:
+  redis:
+    cluster:
+      nodes: ip:port,ip:port,ip:port
+    lettuce:
+      pool:
+        max-active: 250
+        max-wait: 500ms
+        max-idle: 50
+        min-idle: 10
+
+dubbo:
+  application:
+    name: rpc-web
+  registry:
+    protocol: zookeeper
+    address: ${ZOOKEEPER_SERVER:ip:port,ip:port,ip:port}
+  consumer:
+    group: daily
+
+management:
+  server:
+    port: 10013
