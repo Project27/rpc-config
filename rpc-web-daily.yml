@@ -12,14 +12,18 @@ spring:
         max-idle: 50
         min-idle: 10
 
-#dubbo:
-#  application:
-#    name: rpc-web
-#  registry:
-#    protocol: zookeeper
-#    address: ${ZOOKEEPER_SERVER:127.0.0.1:2181}
-#  consumer:
-#    group: ${SPRING_SERVICE:daily}
+dubbo:
+  application:
+    name: rpc-web
+  registry:
+    check: false
+    id: zkreg
+    protocol: zookeeper
+    address: 127.0.0.1:2181
+  consumer:
+    check: false
+    group: daily
+    version: 1.0.0
 
 management:
   server:
