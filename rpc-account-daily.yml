@@ -48,12 +48,10 @@ spring:
       name: rpc-account
     registry:
       check: false
-      id: zkreg
       protocol: zookeeper
       address: 127.0.0.1:2181
     provider:
       threads: 300
-      check: false
       group: daily
       version: 1.0.0
 
