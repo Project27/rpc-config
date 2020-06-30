@@ -42,6 +42,8 @@ spring:
         max-wait: 500ms
         max-idle: 50
         min-idle: 10
+
+nnuo:
   dubbo:
     port: 7889
     application:
