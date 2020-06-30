@@ -16,10 +16,14 @@ dubbo:
   application:
     name: rpc-web
   registry:
+    check: false
+    id: zkreg
     protocol: zookeeper
-    address: ${ZOOKEEPER_SERVER:ip:port,ip:port,ip:port}
+    address: 127.0.0.1:2181
   consumer:
+    check: false
     group: test
+    version: 1.0.0
 
 management:
   server:
