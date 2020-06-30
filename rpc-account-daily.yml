@@ -44,16 +44,20 @@ spring:
         min-idle: 10
 mybatis:
   mapper-locations: classpath:mapper/*.xml
-
+    
 dubbo:
   port: 7889
   application:
     name: rpc-account
   registry:
+    check: false
+    id: zkreg
     protocol: zookeeper
-    address: ${ZOOKEEPER_SERVER:ip:port,ip:port,ip:port}
+    address: 127.0.0.1:2181
   provider:
+    check: false
     group: daily
+    version: 1.0.0
 
 aes:
   key: 1234567887654321
