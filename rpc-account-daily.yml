@@ -5,9 +5,9 @@ spring:
   datasource:
     druid:
       driverClassName: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://ip:port/payCenter?useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false&serverTimezone=UTC&useSSL=false&serverTimezone=Asia/Shanghai&allowMultiQueries=true
-      username: nnuo
-      password: nnuo
+      url: jdbc:mysql://192.168.210.18:3306/payCenter?useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false&serverTimezone=UTC&useSSL=false&serverTimezone=Asia/Shanghai&allowMultiQueries=true
+      username: test
+      password: y8BWspYF5tAuQxKONc29heyuL22FnVkJyejEQsw9NrE=
       initial-size: 10
       max-active: 100
       min-idle: 10
@@ -17,7 +17,7 @@ spring:
       time-between-eviction-runs-millis: 60000
       min-evictable-idle-time-millis: 300000
       connection-properties: password=${spring.datasource.druid.password};aesKey=${aes.key}
-      password-callback-class-name: com.XXX.XXX.XXX.config.DruidConfig
+      password-callback-class-name: com.nuonuo.rpcaccount.config.DruidConfig
       validation-query: SELECT 1 FROM DUAL
       test-while-idle: true
       test-on-borrow: false
