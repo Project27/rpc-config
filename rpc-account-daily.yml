@@ -4,36 +4,36 @@ server:
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
-    druid:
-      driverClassName: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://192.168.210.18:3306/payCenter?useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false&serverTimezone=UTC&useSSL=false&serverTimezone=Asia/Shanghai&allowMultiQueries=true
-      username: test
-      password: y8BWspYF5tAuQxKONc29heyuL22FnVkJyejEQsw9NrE=
-      initial-size: 10
-      max-active: 100
-      min-idle: 10
-      max-wait: 60000
-      pool-prepared-statements: true
-      max-pool-prepared-statement-per-connection-size: 20
-      time-between-eviction-runs-millis: 60000
-      min-evictable-idle-time-millis: 300000
-      connection-properties: password=${spring.datasource.druid.password};aesKey=${aes.key}
-      password-callback-class-name: com.nuonuo.rpcaccount.config.DruidConfig
-      validation-query: SELECT 1 FROM DUAL
-      test-while-idle: true
-      test-on-borrow: false
-      test-on-return: false
-      stat-view-servlet:
-        enabled: true
-        url-pattern: /admin/druid/*
-      filter:
-        stat:
-          log-slow-sql: true
-          slow-sql-millis: 1000
-          merge-sql: true
-        wall:
-          config:
-            multi-statement-allow: true
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.210.18:3306/payCenter?useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false&serverTimezone=UTC&useSSL=false&serverTimezone=Asia/Shanghai&allowMultiQueries=true
+    username: test
+    password: y8BWspYF5tAuQxKONc29heyuL22FnVkJyejEQsw9NrE=
+    initial-size: 10
+    max-active: 100
+    min-idle: 10
+    max-wait: 60000
+    pool-prepared-statements: true
+    max-pool-prepared-statement-per-connection-size: 20
+    time-between-eviction-runs-millis: 60000
+    min-evictable-idle-time-millis: 300000
+    connection-properties: password=${spring.datasource.druid.password};aesKey=${aes.key}
+    password-callback-class-name: com.nuonuo.rpcaccount.config.DruidConfig
+    validation-query: SELECT 1 FROM DUAL
+    test-while-idle: true
+    test-on-borrow: false
+    test-on-return: false
+    stat-view-servlet:
+      enabled: true
+      url-pattern: /admin/druid/*
+    filter:
+      stat:
+        log-slow-sql: true
+        slow-sql-millis: 1000
+        merge-sql: true
+      wall:
+        config:
+          multi-statement-allow: true
+      
   redis:
     cluster:
       nodes: ip:port,ip:port,ip:port
