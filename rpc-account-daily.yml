@@ -3,6 +3,7 @@ server:
 
 spring:
   datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
     druid:
       driverClassName: com.mysql.cj.jdbc.Driver
       url: jdbc:mysql://192.168.210.18:3306/payCenter?useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false&serverTimezone=UTC&useSSL=false&serverTimezone=Asia/Shanghai&allowMultiQueries=true
