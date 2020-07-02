@@ -17,7 +17,7 @@ spring:
       max-pool-prepared-statement-per-connection-size: 20
       time-between-eviction-runs-millis: 60000
       min-evictable-idle-time-millis: 300000
-      connection-properties: password=${spring.datasource.druid.password};aesKey=${aes.key}
+      connection-properties: password=${spring.datasource.password};aesKey=${aes.key}
       password-callback-class-name: com.nuonuo.rpcaccount.config.DruidConfig
       validation-query: SELECT 1 FROM DUAL
       test-while-idle: true
