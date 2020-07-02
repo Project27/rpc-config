@@ -65,3 +65,10 @@ aes:
 management:
   server:
     port: 10014
+    servlet:
+      context-path: /monitor
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    
