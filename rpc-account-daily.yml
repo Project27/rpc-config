@@ -59,7 +59,7 @@ nnuo:
       version: 1.0.0
 
 mybatis:
-  mapper-locations: classpath*:/mapper/*.xml
+  mapper-locations: classpath:mapper/*.xml
 
 aes:
   key: 1234567887654321
